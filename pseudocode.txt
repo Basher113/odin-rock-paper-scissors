@@ -3,9 +3,9 @@
 2. Create a function named getHumanChoice
   2.1  ask user to to choose from "rock", "paper", or "scissors" and return what the user chose. (don't worry about invalid inputs yet)
 3. Keep track of the score for human and computer
-4. Create a function for playingRound
+4. Create a function for playRound
   4.1 Check who won the round and keep track of the scores
   4.2 Inform the user about the result of the round.
   4.3 Increment the score of the winner.
-5. Create a function named playGame and call the playRound 5 times. (don't worry about using loop yet)
+5. Create a function named playGame and call the playRound 5 times.
   5.1 Display the final score for both user and computer
