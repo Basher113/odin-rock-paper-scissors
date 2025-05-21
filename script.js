@@ -9,65 +9,50 @@ const getComputerChoice = () => {
     }
 }
 
-const getHumanChoice = () => {
-    return prompt("Please choose between 'rock', 'paper', or 'scissors' ").toLowerCase();
-}
+let humanScore = 0;
+let computerScore = 0;
 
+const playRound = (humanChoice, computerChoice) => {
+    const winMessage = `You won! ${humanChoice} beats ${computerChoice}` 
+    const loseMessage = `You lose! ${computerChoice} beats ${humanChoice}`
 
+    if (humanChoice === computerChoice) {
+        console.log(`Tie! You both chose ${humanChoice}`)
+        return;
+    } 
 
-const playGame = () => {
-    let humanScore = 0;
-    let computerScore = 0;
-
-    const playRound = (humanChoice, computerChoice) => {
-        const winMessage = `You won! ${humanChoice} beats ${computerChoice}` 
-        const loseMessage = `You lose! ${computerChoice} beats ${humanChoice}`
-
-        if (humanChoice === computerChoice) {
-            console.log(`Tie! You both chose ${humanChoice}`)
-            return;
-        } 
-
-        if (humanChoice === "rock") {
-            if (computerChoice === "scissors") {
-                console.log(winMessage);
-                humanScore++;
-            } else if (computerChoice === "paper") {
-                console.log(loseMessage);
-                computerScore++;
-            }
-
-        } else if (humanChoice === "paper") {
-            if (computerChoice === "rock" ) {
-                console.log(winMessage);
-                humanScore++;
-            } else if (computerChoice === "scissors") {
-                console.log(loseMessage);
-                computerScore++;
-            }
-
-        } else if (humanChoice === "scissors") {
-            if (computerChoice === "paper") {
-                console.log(winMessage);
-                humanScore++;
-            }
-            else if (computerChoice === "rock" ) {
-                console.log(loseMessage);
-                computerScore++;
-            }
-        } else {
-            console.log("Invalid Input.");
+    if (humanChoice === "rock") {
+        if (computerChoice === "scissors") {
+            console.log(winMessage);
+            humanScore++;
+        } else if (computerChoice === "paper") {
+            console.log(loseMessage);
+            computerScore++;
         }
+
+    } else if (humanChoice === "paper") {
+        if (computerChoice === "rock" ) {
+            console.log(winMessage);
+            humanScore++;
+        } else if (computerChoice === "scissors") {
+            console.log(loseMessage);
+            computerScore++;
+        }
+
+    } else if (humanChoice === "scissors") {
+        if (computerChoice === "paper") {
+            console.log(winMessage);
+            humanScore++;
+        }
+        else if (computerChoice === "rock" ) {
+            console.log(loseMessage);
+            computerScore++;
+        }
+    } else {
+        console.log("Invalid Input.");
     }
-
-    for (i=0; i<5; i++) {
-        const computerSelection = getComputerChoice();
-        const humanSelection = getHumanChoice();
-
-        playRound(humanSelection, computerSelection);
-    }
-
-    console.log(`Final Score: ${humanScore} | Computer Score: ${computerScore}`);
 }
+
+ 
 
 playGame()

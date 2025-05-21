@@ -9,3 +9,5 @@
   4.3 Increment the score of the winner.
 5. Create a function named playGame and call the playRound 5 times.
   5.1 Display the final score for both user and computer
+
+6. Create the UI
