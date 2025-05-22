@@ -28,7 +28,7 @@ body {
   gap: 7rem;
   justify-content: center;
 }
-.container.start .user_result {
+.container.start .human_result {
   transform-origin: left;
   animation: userShake 0.7s ease infinite;
 }
@@ -37,7 +37,7 @@ body {
     transform: rotate(10deg);
   }
 }
-.container.start .bot_result {
+.container.start .computer_result {
   transform-origin: right;
   animation: botShake 0.7s ease infinite;
 }
@@ -49,13 +49,14 @@ body {
 .result_images img {
   width: 100px;
 }
-.user_result img {
+.human_result img {
   transform: rotate(90deg);
 }
-.bot_result img {
+.computer_result img {
   transform: rotate(-90deg) rotateY(180deg);
 }
-.result {
+.result,
+.winner {
   text-align: center;
   font-size: 2rem;
   color: #7d2ae8;
@@ -96,6 +97,11 @@ body {
   font-size: 1.235rem;
   margin-top: 1rem;
   pointer-events: none;
+}
+
+.scores {
+  display: flex;
+  justify-content: space-between;
 }
 /* Responsive media query code for small devices */
 @media (max-width: 768px) {
